@@ -21,7 +21,7 @@ socket.on("offer", (id, description) => {
         .then(() => peerConnection.createAnswer())
         .then(sdp => peerConnection.setLocalDescription(sdp))
         .then(() => {
-            //fire and answer event to reply to broadcaster offer
+            //fire answer event to reply to broadcaster offer
             socket.emit("answer", id, peerConnection.localDescription);
         });
     peerConnection.ontrack = event => {
@@ -41,13 +41,12 @@ socket.on("candidate", (id, candidate) => {
         .catch(e => console.error(e));
 });
 
-//fire and watcher event when we get connect event
-
+//fire watcher event when we get connect event
 socket.on("connect", () => {
     socket.emit("watcher");
 });
 
-//fire and watcher event when we get broadcaster event
+//fire watcher event when we get broadcaster event
 socket.on("broadcaster", () => {
     socket.emit("watcher");
 });
