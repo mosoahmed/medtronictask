@@ -29,7 +29,7 @@ localhost:8080 but by clicking on client button which you should get the video t
 ## explaining lifecycle of demo
 
 1. we run the server
-2. you visit at broadcasteer
+2. you visit as broadcasteer
 3. we create rtc peer connection and save id of broadcaster
 4. we find and set ice candidate
 5. after previewing the video we wait for any client to watch
@@ -37,6 +37,6 @@ localhost:8080 but by clicking on client button which you should get the video t
 7. we connect client to server
 8. we notify server that new client is connect which notify broadcaster
 9. broadcaster will init offer and send it to watcher
-10. watch get the offer and init answer and send it to broadcaster
-11. both broacaster and client/watcher have sdp info that which makes it ready for both to connect and preview real time
+10. watcher get the offer and init answer and send it to broadcaster
+11. both broadcaster and client/watcher have sdp info which makes it ready for both to connect and preview real time
     connection
