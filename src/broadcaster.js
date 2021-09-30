@@ -12,7 +12,7 @@ const config = {
 const socket = io.connect(window.location.origin);
 
 
-//init peer connection when we get new watcher, prepare and offer using SDP and send the offer to client
+//init peer connection when we get new watcher, prepare an offer using SDP and send the offer to client
 socket.on("watcher", id => {
     const peerConnection = new RTCPeerConnection(config);
     peerConnections[id] = peerConnection;
@@ -69,7 +69,7 @@ audioSelect.onchange = getStream;
 videoSelect.onchange = getStream;
 
 
-//acc navigator devices to get audio and video tracks
+//access navigator devices to get audio and video tracks
 function getStream() {
     if (window.stream) {
         window.stream.getTracks().forEach(track => {
